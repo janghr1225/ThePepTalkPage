@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--링크부분에 보여질 타이틀-->
+    <title>덕담 하나 주면 안 잡아먹지~</title>
+
+    <!--카톡에서 링크 전달할 때 보여지는 부분도 이렇게 만들어짐-->
+    <meta property="og:title" content="혜린님의 덕담 페이지"/>
+    <meta property="og:description" content="덕담 한마디 남겨주세요!"/>
+    <meta property="og:image" content="https://2022-01-newyear.s3.ap-northeast-2.amazonaws.com/ogimage.png"/>
+
+<style>
+    /*폰트 설정*/
+    @font-face {
+        font-family: 'Cafe24Ssurround';
+        src: url('https://2022-01-newyear.s3.ap-northeast-2.amazonaws.com/Cafe24Ssurround.woff') format('woff');
+    }
+    /* 여기서 *는 폰트를 전체 글에 적용한다는 의미*/
+    * {
+        font-family: 'Cafe24Ssurround';
+    }
+
+    /*보여지는 화면 전체*/
+    .background{
+        /*vh,vw는 모바일에서도 적절히 보이도록 설정하는 것*/
+        width: 100vw;
+        height: 100vh;
+
+        /*화면을 줄이고 늘릴 때 최대로 늘어나는 범위 지정*/
+        max-width: 450px;
+
+        /*화면 전체에 이미지 넣기 - 화면에 꽉차게*/
+        background-image: url('https://2022-01-newyear.s3.ap-northeast-2.amazonaws.com/bg_default.png');
+        background-position: center;
+        background-size: cover;
+        margin:auto;
+    }
+
+    /*body의 자투리 여백 없애기 - 원래 자동생성되는 여백이지만 없는게 만들기 편함*/
+    body, h1, p{
+        margin:0;
+        padding: 0;
+    }
+
+    .title{
+        color: #3f3732;
+        
+        /*글씨가 가운데 오도록, 이 네줄은 셋뚜셋뚜*/
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding-top:5vh;
+    }
+    .title>h1{
+        font-size: 22px;
+        background-color: white;
+
+        padding: 8px 16px;
+        border-radius: 16px;
+
+        margin-bottom: 16px;
+    }
+    /*받은 덕담 텍스트로 보여줌*/
+    .title>p{
+        font-size: 18px;
+    }
+    .title>p>span{
+        font-size: 22px;
+    }
+
+    .btn{
+        background-color: #3f3732;
+        color: white;
+
+        width: 300px;
+        height: 50px;
+
+        /*배경을 둥글게*/
+        border-radius: 10px;
+
+        font-size: 18px;
+
+        /*글씨가 가운데 오도록*/
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        /*버튼위에 마우스가 올라가면 커서 바뀜*/
+        cursor: pointer;
+        /*버튼을 body가운데에 떠다니도록*/
+        position: fixed;
+        bottom: 16px;
+        left: calc(50% - 150px);
+        
+    }
+
+    .box>img{
+        width: 70px;
+        position: absolute;
+        bottom: 50%;
+        left: 20%;
+    }
+
+</style>
+
+<!--서버에 저장하고 가져오는 작업-->
+<script src="https://2022-01-newyear.s3.ap-northeast-2.amazonaws.com/free_newyear_2022.js"></script>
+<script> 
+    let mycode = '558967fe6e5b7e2d2a3596dcef07db04'; 
+</script>
+
+</head>
+<body>
+    <div class="background">
+        <!--위에 두줄 구조잡기-->
+        <div class="title">
+            <h1>덕담 하나 주면 안잡아먹지!</h1>
+            <p>깡깡이가 받은 덕담: <span>2개</span></p>
+        </div>
+
+        <div class="box">
+        </div>
+
+        <div class="btn">바구니에 덕담 남기기</div>
+    </div>
+
+</body>
+</html>
